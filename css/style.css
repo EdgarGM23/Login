@@ -168,17 +168,57 @@ form .form-group input:valid~i{
         transform: translateX(0);
     }
     50%{
-        transform: translateX(-50rem);
-    }
+        transform: translateX(-50rem) scale(1.1);
+}
     100%{
-        transform: translateX(0) rotate(6deg);
-    }
+        transform: translateX(0) rotate(6deg) scale(1);
+}
 }
 
-.wrapper .animated-signin .form-container.sign-up{
+.wrapper.animated-signin .form-container.sign-up{
     animation: rotatecard .7s ease-in-out forwards;
 }
 
 @keyframes rotatecard{
-    
+    0%{
+        transform: rotate(6drg);
+    }
+
+    100%{
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.wrapper.animated-signup .form-container.sign-up{
+    animation: signup-flip 1s ease-in-out forwards;
+}
+@keyframes signup-flip{
+    0%{
+        transform: translateX(0);
+        z-index: 1;
+    }
+    50%{
+        transform: translateX(50rem) scale(1.1);
+}
+    100%{
+        transform: translateX(0) rotate(6deg) scale(1);
+}
+}
+
+.wrapper.animated-signup .form-container.sign-in{
+    transform: rotate(6deg);
+    animation: rotatecard .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes rotatecard{
+    0%{
+        transform: rotate(6drg);
+    }
+
+    100%{
+        transform: rotate(0);
+        z-index: 1;
+    }
 }
